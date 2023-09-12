@@ -23,6 +23,10 @@ data = session.query(Measurement.date, func.avg(Measurement.prcp)).\
 precipitation = pd.DataFrame(data, columns=["date", "prcp"]).sort_values("date")
  ```
 - Plotted the results
+
 ![image](https://github.com/Faith-Hall/sqlalchemy-challenge/assets/135525815/e9b59d2d-3483-4a88-80ff-485c92475016)
+
 - Printed summary statistics
-![Screenshot 2023-09-12 121931](https://github.com/Faith-Hall/sqlalchemy-challenge/assets/135525815/f8f04935-34a1-4c23-bb59-572f648777a4)
+  
+![image](https://github.com/Faith-Hall/sqlalchemy-challenge/assets/135525815/617ccd1e-8fe1-4320-8300-d53ee149d332)
+
