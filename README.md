@@ -1,6 +1,9 @@
 # sqlalchemy-challenge
 ---
 ### Part 1: Analyze and Explore the Climate Data
+
+### Precipitation Analysis
+---
 I did a climate analysis and exploration of the ```hawaii.sqlite``` file. 
 
 - I found the most recent date in the dataset by querrying the maximum value from the measurement class in the date column.
@@ -30,3 +33,4 @@ precipitation = pd.DataFrame(data, columns=["date", "prcp"]).sort_values("date")
   
 ![image](https://github.com/Faith-Hall/sqlalchemy-challenge/assets/135525815/617ccd1e-8fe1-4320-8300-d53ee149d332)
 
+### Station Analysis
