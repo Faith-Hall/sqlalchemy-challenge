@@ -11,10 +11,18 @@ most_recent_date_str = session.query(func.max(Measurement.date)).scalar()
 ```
 start_date = most_recent_date - dt.timedelta(days = 365)
 ``` 
-- Selected the date and prcp values
+- Selected the date and prcp values. (I used the average of prcp to eliminate duplicate dates)
 ```
 data = session.query(Measurement.date, func.avg(Measurement.prcp)).\
     filter(Measurement.date >= start_date).\
     group_by(Measurement.date).\
     all()
 ```
+- Saved query results to a Pandas DataFrame
+```
+precipitation = pd.DataFrame(data, columns=["date", "prcp"]).sort_values("date")
+ ```
+- Plotted the results
+![image](https://github.com/Faith-Hall/sqlalchemy-challenge/assets/135525815/e9b59d2d-3483-4a88-80ff-485c92475016)
+- Printed summary statistics
+![Screenshot 2023-09-12 121931](https://github.com/Faith-Hall/sqlalchemy-challenge/assets/135525815/f8f04935-34a1-4c23-bb59-572f648777a4)
